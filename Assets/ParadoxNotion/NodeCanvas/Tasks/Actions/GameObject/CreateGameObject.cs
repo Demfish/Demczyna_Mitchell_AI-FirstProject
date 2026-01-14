@@ -9,7 +9,7 @@ namespace NodeCanvas.Tasks.Actions
     [Category("GameObject")]
     public class CreateGameObject : ActionTask
     {
-
+  
         public BBParameter<string> objectName;
         public BBParameter<Vector3> position;
         public BBParameter<Vector3> rotation;
@@ -22,6 +22,7 @@ namespace NodeCanvas.Tasks.Actions
             newGO.transform.position = position.value;
             newGO.transform.eulerAngles = rotation.value;
             saveAs.value = newGO;
+            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             EndAction();
         }
     }
